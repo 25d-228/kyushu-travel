@@ -1,0 +1,26 @@
+name: Read migration source
+on:
+  push:
+    paths: ['.github/workflows/source-snapshot.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: 25d-228/kyushu-cycle-guide
+          ref: eb6c04987062e68af31a23b6b2e6a7b597eb721a
+          path: source
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pinned-travel-source
+          path: |
+            source/index.html
+            source/cycling.html
+            source/assets
+            source/PHOTO-CREDITS.md
+            source/RAIL-PHOTO-CREDITS.md
+          retention-days: 7
