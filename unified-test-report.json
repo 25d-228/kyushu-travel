@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "url": "http://127.0.0.1:8871/",
+  "tripCount": 6,
+  "days": 73,
+  "tests": [
+    "All six trip selectors, 73 days, separate dates, and all shared detail tabs",
+    "Waypoint navigation, repeated destinations, Kyoto two-day rest and three-night stay, distinct Shimonoseki bookings",
+    "Real photos load on every rest day; attribution remains visible",
+    "Main-page settings, draft/cancel/save, persistence, search, keyboard tabs, focus return, backup export/import",
+    "Seven responsive viewports, centered minimum-size dialogs, no page or dialog horizontal overflow",
+    "Cycling and rail legacy date/candidate migration; inaccessible-storage fallback"
+  ],
+  "viewports": [
+    [
+      1920,
+      1080
+    ],
+    [
+      1440,
+      1000
+    ],
+    [
+      1024,
+      768
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      320,
+      568
+    ],
+    [
+      844,
+      390
+    ]
+  ],
+  "pageErrors": []
+}

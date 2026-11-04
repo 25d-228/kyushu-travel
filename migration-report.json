@@ -1,0 +1,45 @@
+{
+  "sourceCommit": "eb6c04987062e68af31a23b6b2e6a7b597eb721a",
+  "trips": {
+    "bike-small": {
+      "days": 4,
+      "restDays": 1,
+      "nights": 3,
+      "preserved": true
+    },
+    "bike-kaikyo": {
+      "days": 5,
+      "restDays": 1,
+      "nights": 4,
+      "preserved": true
+    },
+    "bike-main": {
+      "days": 14,
+      "restDays": 2,
+      "nights": 13,
+      "preserved": true
+    },
+    "bike-kyoto": {
+      "days": 28,
+      "restDays": 6,
+      "nights": 27,
+      "preserved": true
+    },
+    "rail-kyushu": {
+      "days": 12,
+      "restDays": 5,
+      "nights": 11,
+      "preserved": true
+    },
+    "rail-kyoto": {
+      "days": 10,
+      "restDays": 4,
+      "nights": 9,
+      "preserved": true
+    }
+  },
+  "sourceFileHashes": {
+    "cycling.html": "9ae255e194e8d77660cb575f09ae545bb0f3c9d2b44ad14cb0f10b51010a5177",
+    "assets/rail-data.js": "5eab3955d08ba30ba09dba03e5d16a6361e43606608a0bc7215ffabf0523999e"
+  }
+}
