@@ -1,7 +1,7 @@
 name: Build unified travel website
 on:
   push:
-    branches: [feature/unified-travel]
+    branches: [main, feature/unified-travel]
     paths:
       - '.build/**'
       - '.github/workflows/prepare-unified.yml'
@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: feature/unified-travel
+          ref: ${{ github.ref_name }}
           fetch-depth: 0
       - uses: actions/checkout@v4
         with:
@@ -58,13 +58,15 @@ jobs:
       - name: Test shared navigation, rest days, settings, dates, photos and mobile screens
         run: python -u scripts/test_unified.py
       - name: Commit the validated website
+        env:
+          TARGET_BRANCH: ${{ github.ref_name }}
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add .build/applied index.html cycling.html rail.html assets scripts README.md .nojekyll PHOTO-CREDITS.md RAIL-PHOTO-CREDITS.md MAP-LICENSES.txt migration-report.json unified-test-report.json
           if ! git diff --cached --quiet; then
             git commit -m 'Build validated unified travel planner with six preserved itineraries'
-            git push origin HEAD:feature/unified-travel
+            git push origin "HEAD:$TARGET_BRANCH"
           fi
       - uses: actions/upload-artifact@v4
         if: always()
